@@ -21,7 +21,7 @@ export const deleteUser = (uid) =>
     .then(response => response.data);
 
 export const updateUser = (uid, user) =>
-    axios.post(`${USERS_API}/${uid}` , user)
+    axios.put(`${USERS_API}/${uid}` , user)
         .then(response => response.data);
 
 export const deleteUsersByUsername = (username) =>
