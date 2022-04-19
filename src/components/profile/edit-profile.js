@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {useState} from "react";
 import {useNavigate,Link} from "react-router-dom";
 import * as service from "../../services/users-service";
+import {updateUser} from "../../services/users-service";
 
 const EditProfile = () => {
     const [newUser,setNewUser] = useState({});
@@ -24,7 +25,8 @@ const EditProfile = () => {
                 <Link to="/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa fa-close"></i>
                 </Link>
-                <Link to="/profile" className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2">
+                <Link to="/profile" className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
+                      onClick = {editProfile}>
                     Save
                 </Link>
                 <h4 className="p-2 mb-0 pb-0 fw-bolder">Edit profile</h4>
