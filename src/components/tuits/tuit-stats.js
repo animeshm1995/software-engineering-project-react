@@ -5,8 +5,8 @@ import {findAllTuitsDislikedByUser} from "../../services/dislikes-service";
 const TuitStats = ({tuit, likeTuit = () => {}, dislikeTuit = () => {}}) => {
     const [isTuitLiked, setIsTuitLiked] = useState(false);
     const [isTuitDisliked, setIsTuitDisliked] = useState(false);
-    findAllTuitsLikedByUser("me").then(response => setIsTuitLiked((response.filter(retrievedTuitFromDB => retrievedTuitFromDB._id === tuit._id)).length > 0));
-    findAllTuitsDislikedByUser("me").then(response => setIsTuitDisliked((response.filter(retrievedTuitFromDB => retrievedTuitFromDB._id === tuit._id)).length > 0));
+    //findAllTuitsLikedByUser("me").then(response => setIsTuitLiked((response.filter(retrievedTuitFromDB => retrievedTuitFromDB._id === tuit._id)).length > 0));
+    //findAllTuitsDislikedByUser("me").then(response => setIsTuitDisliked((response.filter(retrievedTuitFromDB => retrievedTuitFromDB._id === tuit._id)).length > 0));
     return (
       <div className="row mt-2">
         <div className="col">
