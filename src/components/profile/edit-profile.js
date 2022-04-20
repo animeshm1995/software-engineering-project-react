@@ -57,10 +57,13 @@ const EditProfile = () => {
                            placeholder="last-name"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="bio">Bio</label>
+                    <label htmlFor="biography">Bio</label>
                     <textarea  value = {newUser.biography}
                         className="p-0 form-control border-0"
-                        id="bio" placeholder="biography" />
+                        id="biography"
+                        onChange={(e) =>
+                        setNewUser({...newUser, biography: e.target.value})}
+                               placeholder="biography" />
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="date-of-birth">Date of birth</label>
