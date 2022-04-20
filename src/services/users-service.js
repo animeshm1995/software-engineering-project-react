@@ -4,31 +4,36 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USERS_API = `${BASE_URL}/api/users`;
 
+
+const api = axios.create({
+    withCredentials: true
+});
+
 export const createUser = (user) =>
-  axios.post(`${USERS_API}`, user)
+    api.post(`${USERS_API}`, user)
     .then(response => response.data);
 
 export const findAllUsers = () =>
-    axios.get(USERS_API)
+    api.get(USERS_API)
         .then(response => response.data);
 
 export const findUserById = (uid) =>
     console.log("Animesh find user: ", uid);
-    axios.get(`${USERS_API}/${uid}`)
+    api.get(`${USERS_API}/${uid}`)
         .then(response => response.data);
 
 export const deleteUser = (uid) =>
-  axios.delete(`${USERS_API}/${uid}`)
+  api.delete(`${USERS_API}/${uid}`)
     .then(response => response.data);
 
 export const updateUser = (uid, user) => {
   console.log("Animesh update user: ", user);
-  axios.put(`${USERS_API}/${uid}`, user)
+  api.put(`${USERS_API}/${uid}`, user)
       .then(response => response.data);
 }
 
 export const deleteUsersByUsername = (username) =>
-  axios.get(`${USERS_API}/username/${username}/delete`)
+  api.get(`${USERS_API}/username/${username}/delete`)
     .then(response => response.data);
 
 
