@@ -102,14 +102,14 @@ const EditProfile = () => {
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label>Select account</label>
                     <select className="p-0 form-control border-0"
-                            id="account" value={newUser.accountType} onChange={(e) =>
+                            id="accountType" value={newUser.accountType} onChange={(e) =>
                         setNewUser({...newUser, accountType: e.target.value})} >
                         <option value="Personal">Personal</option>
                         <option value="Academic">Academic</option>
                         <option value="Professional">Professional</option>
                     </select>
                 </div>
-                <div className="radio"> Marital Status
+                <div className="border border-secondary rounded-3 p-2 mb-3"> Marital Status
                     <label>
                         <input type="radio" value="Married"
                                checked={newUser.maritalStatus === 'Married'}
