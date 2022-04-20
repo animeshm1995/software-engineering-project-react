@@ -8,7 +8,7 @@ const EditProfile = () => {
     const findMyProfile = () =>
         service.findUserById("my")
             .then(user => setNewUser(user));
-    useEffect(findMyProfile);
+    useEffect(findMyProfile, {});
     const editProfile = () =>
         service.updateUser("my",newUser)
             .then(() => navigate('/profile'))
