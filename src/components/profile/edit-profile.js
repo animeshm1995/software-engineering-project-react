@@ -5,10 +5,10 @@ import * as service from "../../services/profile-service";
 const EditProfile = () => {
     const [newUser,setNewUser] = useState({});
     const navigate = useNavigate();
-    const findMyProfile = () =>
+/*    const findMyProfile = () =>
         service.findUserById("my")
             .then(newUser => setNewUser(newUser));
-    useEffect(findMyProfile, []);
+    useEffect(findMyProfile, []);*/
     const editProfile = () =>
         service.updateUser("my",newUser)
             .then((user) => navigate('/profile'))
