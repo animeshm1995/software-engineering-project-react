@@ -19,7 +19,5 @@ export const updateUser = (uid, user) => {
 export const findUserById = (uid) => {
     console.log("Animesh find user: ", uid);
     api.get(`${USERS_API}/${uid}`)
-        .then((response) => {
-            console.log("response: ", response);
-            response.data});
+        .then(response => response.data);
 }
