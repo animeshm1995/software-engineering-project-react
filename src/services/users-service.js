@@ -13,6 +13,7 @@ export const findAllUsers = () =>
         .then(response => response.data);
 
 export const findUserById = (uid) =>
+    console.log("Animesh find user: ", uid);
     axios.get(`${USERS_API}/${uid}`)
         .then(response => response.data);
 
