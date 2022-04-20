@@ -7,7 +7,7 @@ const EditProfile = () => {
     const navigate = useNavigate();
     const findMyProfile = () =>
         service.findUserById("my")
-            .then(user => setNewUser(user));
+            .then(newUser => setNewUser(newUser));
     useEffect(findMyProfile, {});
     const editProfile = () =>
         service.updateUser("my",newUser)
@@ -44,11 +44,10 @@ const EditProfile = () => {
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="first-name">First name</label>
-                    <input id="first-name"
+                    <input id="first-name" value = {newUser.firstName}
                            className="p-0 form-control border-0"
                            onChange={(e) =>
-                               setNewUser({...newUser, firstName: e.target.value})}
-                           placeholder="first-name" />
+                               setNewUser({...newUser, firstName: e.target.value})}/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="last-name">Last name</label>
