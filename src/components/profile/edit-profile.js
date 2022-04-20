@@ -100,26 +100,37 @@ const EditProfile = () => {
                            type="file"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label for="account" value = {newUser.accountType}>Select account</label>
-                    <select
-                        className="p-0 form-control border-0"
-                        id="account">
-                        <option>Personal account</option>
-                        <option selected>Academic account</option>
-                        onChange={(e) =>
-                        setNewUser({...newUser, accountType: e.target.value})}
+                    <label>Select account</label>
+                    <select className="p-0 form-control border-0"
+                            id="account" value={newUser.accountType} onChange={(e) =>
+                        setNewUser({...newUser, accountType: e.target.value})} >
+                        <option value="Personal">Personal</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Professional">Professional</option>
                     </select>
                 </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    Marital status
-                    <input id="married"
-                           type="radio" name="marital"/>
-                    <label for="married">Married</label>
-                    <input id="single" type="radio"
-                           checked name="marital"/>
-                    <label for="single">Single</label>
-                    onChange={(e) =>
-                    setNewUser({...newUser, maritalStatus: e.target.value})}
+                <div className="radio"> Marital Status
+                    <label>
+                        <input type="radio" value="Married"
+                               checked={newUser.maritalStatus === 'Married'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Married
+                    </label>
+                    <label>
+                        <input type="radio" value="Single"
+                               checked={newUser.maritalStatus === 'Single'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Single
+                    </label>
+                    <label>
+                        <input type="radio" value="Widowed"
+                               checked={newUser.maritalStatus === 'Widowed'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Widowed
+                    </label>
                 </div>
                 <div>
                     <button type="submit" className="btn btn-primary mb-5">Save></button>
