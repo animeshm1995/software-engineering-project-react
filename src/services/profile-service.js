@@ -10,11 +10,9 @@ const api = axios.create({
     withCredentials: true
 });
 
-export const updateUser = (uid, user) => {
-    console.log("Animesh update user: ", user);
+export const updateUser = (uid, user) =>
     api.put(`${USERS_API}/${uid}`, user)
         .then(response => response.data);
-}
 
 export const findUserById = (uid) =>
     api.get(`${USERS_API}/${uid}`)
