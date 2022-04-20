@@ -7,8 +7,8 @@ const EditProfile = () => {
     const navigate = useNavigate();
     const findMyProfile = () =>
         service.findUserById("my")
-            .then(newUser => setNewUser(newUser));
-    useEffect(findMyProfile, []);
+            .then(user => setNewUser(user));
+    useEffect(findMyProfile);
     const editProfile = () =>
         service.updateUser("my",newUser)
             .then(() => navigate('/profile'))
