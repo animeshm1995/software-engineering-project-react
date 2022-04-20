@@ -6,7 +6,7 @@ const EditProfile = () => {
     const [newUser,setNewUser] = useState({});
     const navigate = useNavigate();
     const editProfile = () =>
-        service.updateUser("me",newUser)
+        service.updateUser("my",newUser)
             .then((user) => navigate('/profile'))
             .catch(e => alert(e));
     return(
