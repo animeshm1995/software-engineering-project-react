@@ -39,7 +39,6 @@ const EditProfile = () => {
                     <label htmlFor="username">Username</label>
                     <input id="username" title="Username" readOnly
                            className="p-0 form-control border-0"
-                           //todo
                            placeholder="alan" value="alan"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
@@ -52,59 +51,60 @@ const EditProfile = () => {
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="last-name">Last name</label>
                     <input id="last-name"
-                           className="p-0 form-control border-0"
+                           className="p-0 form-control border-0" value = {newUser.lastName}
                            onChange={(e) =>
                                setNewUser({...newUser, lastName: e.target.value})}
                            placeholder="last-name"/>
                 </div>
-                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="bio">Bio</label>
-                    <textarea
+                    <textarea  value = {newUser.biography}
                         className="p-0 form-control border-0"
-                        id="bio"></textarea>
+                        id="bio" placeholder="biography" />
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="date-of-birth">Date of birth</label>
                     <input id="date-of-birth"
-                           className="p-0 form-control border-0"
+                           className="p-0 form-control border-0" value = {newUser.dateOfBirth}
                            onChange={(e) =>
                                setNewUser({...newUser, dateOfBirth: e.target.value})}
                            placeholder="date-of-birth"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="email">Email</label>
-                    <input id="email"
+                    <input id="email" value = {newUser.email}
                            className="p-0 form-control border-0"
                            onChange={(e) =>
                                setNewUser({...newUser, email: e.target.value})}
                            type="email" placeholder="email"/>
                 </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="password">Reset password</label>
-                    <input id="password"
-                           className="p-0 form-control border-0"
-                           type="password"/>
-                </div>
+                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label for="photo">Profile photo</label>
                     <input id="photo"
                            className="p-0 form-control border-0"
+                           onChange={(e) =>
+                               setNewUser({...newUser, profilePhoto: e.target.value})}
                            type="file"/>
                 </div>
+                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label for="header">Header image</label>
                     <input id="header"
                            className="p-0 form-control border-0"
+                           onChange={(e) =>
+                               setNewUser({...newUser, headerImage: e.target.value})}
                            type="file"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label for="account">Select account</label>
+                    <label for="account" value = {newUser.accountType}>Select account</label>
                     <select
                         className="p-0 form-control border-0"
                         id="account">
                         <option>Personal account</option>
                         <option selected>Academic account</option>
+                        onChange={(e) =>
+                        setNewUser({...newUser, accountType: e.target.value})}
                     </select>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
@@ -115,18 +115,8 @@ const EditProfile = () => {
                     <input id="single" type="radio"
                            checked name="marital"/>
                     <label for="single">Single</label>
-                </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    Topics of interest
-                    <input id="space" type="checkbox"
-                           checked name="topics"/>
-                    <label for="space">Space</label>
-                    <input id="energy" type="checkbox" checked
-                           name="topics"/>
-                    <label for="energy">Energy</label>
-                    <input id="politics" type="checkbox"
-                           name="topics"/>
-                    <label for="politics">Politics</label>
+                    onChange={(e) =>
+                    setNewUser({...newUser, maritalStatus: e.target.value})}
                 </div>
                 <div>
                     <button type="submit" className="btn btn-primary mb-5">Save></button>
