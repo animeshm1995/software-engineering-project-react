@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {findAllTuitsLikedByUser} from "../../services/likes-service";
 import {findAllTuitsDislikedByUser} from "../../services/dislikes-service";
 
-const TuitStats = ({tuit, likeTuit = () => {}, dislikeTuit = () => {}}) => {
+const TuitStats = ({tuit, likeTuit = () => {}, dislikeTuit = () => {}, bookmarkTuit = () => {}}) => {
     const [isTuitLiked, setIsTuitLiked] = useState(false);
     const [isTuitDisliked, setIsTuitDisliked] = useState(false);
     //findAllTuitsLikedByUser("me").then(response => setIsTuitLiked((response.filter(retrievedTuitFromDB => retrievedTuitFromDB._id === tuit._id)).length > 0));
@@ -47,6 +47,19 @@ const TuitStats = ({tuit, likeTuit = () => {}, dislikeTuit = () => {}}) => {
               {tuit.stats && tuit.stats.dislikes}
           </span>
         </div>
+          <div className="col">
+          <span onClick={() => bookmarkTuit(tuit)} data-testid="test-bookmarkButton">
+              {
+                  tuit.stats && tuit.stats.bookmarks > 0 &&
+                  <i className="fa-solid fa-bookmark" style={{color: 'red'}}></i>
+              }
+              {
+                  tuit.stats && tuit.stats.bookmarks <= 0 &&
+                  <i className="fa-light fa-bookmark"></i>
+              }
+              {tuit.stats && tuit.stats.bookmarks}
+          </span>
+          </div>
         <div className="col">
           <i className="far fa-inbox-out"></i>
         </div>
