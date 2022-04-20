@@ -30,7 +30,7 @@ const EditProfile = () => {
                     </div>
                 </div>
             </div>
-            <form action="../../../public/html/profile.html">
+            <form onSubmit={editProfile}>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="username">Username</label>
                     <input id="username" title="Username" readOnly
@@ -126,7 +126,7 @@ const EditProfile = () => {
                     <label for="politics">Politics</label>
                 </div>
                 <div>
-                    <button onClick={editProfile} className="btn btn-primary mb-5">Save></button>
+                    <button type="submit" className="btn btn-primary mb-5">Save></button>
                 </div>
             </form></div>
     );
