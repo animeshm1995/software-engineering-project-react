@@ -11,7 +11,7 @@ const EditProfile = () => {
     useEffect(findMyProfile, []);
     const editProfile = () =>
         service.updateUser("my",newUser)
-            .then((user) => navigate('/profile'))
+            .then(() => navigate('/profile'))
             .catch(e => alert(e));
     return(
         <div className="ttr-edit-profile">
