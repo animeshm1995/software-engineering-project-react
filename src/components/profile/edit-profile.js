@@ -17,14 +17,10 @@ const EditProfile = () => {
         <div className="ttr-edit-profile">
             <div className="border border-bottom-0">
                 <Link to="/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
-                    <i className="fa fa-close"></i>
+                    <i className="fa fa-close"/>
                 </Link>
-                {/*<Link to="/profile" className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2">
-                    Save
-                </Link>*/}
                 <h4 className="p-2 mb-0 pb-0 fw-bolder">Edit profile</h4>
                 <div className="mb-5 position-relative">
-                    //todo
                     <img className="w-100" src="../../../public/images/nasa-profile-header.jpg"/>
                     <div className="bottom-0 left-0 position-absolute">
                         <div className="position-relative">
@@ -90,7 +86,6 @@ const EditProfile = () => {
                                setNewUser({...newUser, profilePhoto: e.target.value})}
                            type="file"/>
                 </div>
-                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label for="header">Header image</label>
                     <input id="header"
