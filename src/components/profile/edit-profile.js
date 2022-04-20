@@ -1,10 +1,14 @@
 import {Link, useNavigate} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import * as service from "../../services/users-service";
 
 const EditProfile = () => {
     const [newUser,setNewUser] = useState({});
     const navigate = useNavigate();
+    const findMyProfile = () =>
+        service.findUserById("my")
+            .then(newUser => setNewUser(newUser));
+    useEffect(findMyProfile, []);
     const editProfile = () =>
         service.updateUser("my",newUser)
             .then((user) => navigate('/profile'))
