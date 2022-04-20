@@ -12,10 +12,11 @@ export const findAllUsers = () =>
     axios.get(USERS_API)
         .then(response => response.data);
 
-export const findUserById = (uid) =>
+export const findUserById = (uid) => {
     console.log("Animesh find user: ", uid);
     axios.get(`${USERS_API}/${uid}`)
         .then(response => response.data);
+}
 
 export const deleteUser = (uid) =>
   axios.delete(`${USERS_API}/${uid}`)
