@@ -20,13 +20,16 @@ export const deleteUser = (uid) =>
   axios.delete(`${USERS_API}/${uid}`)
     .then(response => response.data);
 
-export const updateUser = (uid, user) =>
-    axios.put(`${USERS_API}/${uid}` , user)
-        .then(response => response.data);
+export const updateUser = (uid, user) => {
+  console.log("Animesh update user: ", user);
+  axios.put(`${USERS_API}/${uid}`, user)
+      .then(response => response.data);
+}
 
 export const deleteUsersByUsername = (username) =>
   axios.get(`${USERS_API}/username/${username}/delete`)
     .then(response => response.data);
+
 
 const service = {
   findAllUsers
