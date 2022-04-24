@@ -8,7 +8,7 @@ const EditProfile = () => {
     const handleFileUpload = async (e) => {
         const file = e.target.files[0];
         const base64 = await convertToBase64(file);
-        setNewUser({ ...newUser, profilePhoto, myFile: base64 });
+        setNewUser({ ...newUser, profilePhoto: base64 });
     };
     const convertToBase64 = (file) => {
         return new Promise((resolve, reject) => {
