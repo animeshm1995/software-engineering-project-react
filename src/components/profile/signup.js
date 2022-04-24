@@ -5,10 +5,12 @@ import {useNavigate} from "react-router-dom";
 const Signup = () => {
     const [newUser, setNewUser] = useState({});
     const navigate = useNavigate();
-    const signup = () =>
+    const signup = () => {
+        newUser.headerImage = "../../images/perseverance.jpg";
         service.register(newUser)
             .then(() => navigate('/home'))
             .catch(e => alert(e));
+    }
     return (
         <div>
             <h1>Signup</h1>
