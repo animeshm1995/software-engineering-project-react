@@ -43,7 +43,7 @@ const EditProfile = () => {
                 </Link>
                 <h4 className="p-2 mb-0 pb-0 fw-bolder">Edit profile</h4>
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src="../../../public/images/nasa-profile-header.jpg"/>
+                    <img className="w-100" src={newUser.headerImage}/>
                     <div className="bottom-0 left-0 position-absolute">
                         <div className="position-relative">
                             <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-150px"
@@ -99,7 +99,6 @@ const EditProfile = () => {
                                setNewUser({...newUser, email: e.target.value})}
                            type="email" placeholder="email"/>
                 </div>
-                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label for="photo">Profile photo</label>
                     <input id="photo"
