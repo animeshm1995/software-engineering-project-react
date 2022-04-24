@@ -7,7 +7,7 @@ const Signup = () => {
     const navigate = useNavigate();
     const signup = () => {
         newUser.headerImage = "../../images/nasa-profile-header.jpg";
-        newUser.profilePhoto = "../../images/profile.jpg";
+        newUser.profilePhoto = "../../images/charlie.jpg";
         service.register(newUser)
             .then(() => navigate('/home'))
             .catch(e => alert(e));
