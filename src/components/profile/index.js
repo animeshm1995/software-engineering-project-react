@@ -30,7 +30,7 @@ const Profile = () => {
           <i className="fa fa-badge-check text-primary"/></h4>
         <span className="ps-2">67.6K Tuits</span>
         <div className="mb-5 position-relative">
-          <img className="img" src="../../images/perseverance.jpg" />
+          <img className="img" src={profile.headerImage} />
           <div className="bottom-0 left-0 position-absolute">
             <div className="position-relative">
               <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-150px"
