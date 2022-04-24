@@ -33,7 +33,7 @@ const EditProfile = () => {
     useEffect(findMyProfile, {});
     const editProfile = () =>
         service.updateUser("my",newUser)
-            .then((user) => navigate('/profile'))
+            .then((user) => navigate('/profile/mytuits'))
             .catch(e => alert(e));
     return(
         <div className="ttr-edit-profile">

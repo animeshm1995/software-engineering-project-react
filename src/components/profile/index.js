@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import MyTuits from "./my-tuits";
-import { useFocusEffect } from '@react-navigation/native';
 import {HashRouter, Link, Route, Routes, useNavigate, useLocation} from "react-router-dom";
 import * as service from "../../services/security-service"
 import TuitsAndReplies from "./tuits-and-replies";
