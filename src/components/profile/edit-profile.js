@@ -34,14 +34,10 @@ const EditProfile = () => {
         <div className="ttr-edit-profile">
             <div className="border border-bottom-0">
                 <Link to="/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
-                    <i className="fa fa-close"></i>
+                    <i className="fa fa-close"/>
                 </Link>
-                {/*<Link to="/profile" className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2">
-                    Save
-                </Link>*/}
                 <h4 className="p-2 mb-0 pb-0 fw-bolder">Edit profile</h4>
                 <div className="mb-5 position-relative">
-                    //todo
                     <img className="w-100" src="../../../public/images/nasa-profile-header.jpg"/>
                     <div className="bottom-0 left-0 position-absolute">
                         <div className="position-relative">
@@ -74,10 +70,13 @@ const EditProfile = () => {
                            placeholder="last-name"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="bio">Bio</label>
+                    <label htmlFor="biography">Bio</label>
                     <textarea  value = {newUser.biography}
                         className="p-0 form-control border-0"
-                        id="bio" placeholder="biography" />
+                        id="biography"
+                        onChange={(e) =>
+                        setNewUser({...newUser, biography: e.target.value})}
+                               placeholder="biography" />
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="date-of-birth">Date of birth</label>
@@ -104,7 +103,6 @@ const EditProfile = () => {
                                handleFileUpload(e)}
                            type="file"/>
                 </div>
-                //todo
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label for="header">Header image</label>
                     <input id="header"
@@ -114,26 +112,37 @@ const EditProfile = () => {
                            type="file"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label for="account" value = {newUser.accountType}>Select account</label>
-                    <select
-                        className="p-0 form-control border-0"
-                        id="account">
-                        <option>Personal account</option>
-                        <option selected>Academic account</option>
-                        onChange={(e) =>
-                        setNewUser({...newUser, accountType: e.target.value})}
+                    <label>Select account</label>
+                    <select className="p-0 form-control border-0"
+                            id="accountType" value={newUser.accountType} onChange={(e) =>
+                        setNewUser({...newUser, accountType: e.target.value})} >
+                        <option value="Personal">Personal</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Professional">Professional</option>
                     </select>
                 </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    Marital status
-                    <input id="married"
-                           type="radio" name="marital"/>
-                    <label for="married">Married</label>
-                    <input id="single" type="radio"
-                           checked name="marital"/>
-                    <label for="single">Single</label>
-                    onChange={(e) =>
-                    setNewUser({...newUser, maritalStatus: e.target.value})}
+                <div className="border border-secondary rounded-3 p-2 mb-3"> Marital Status
+                    <label>
+                        <input type="radio" value="Married"
+                               checked={newUser.maritalStatus === 'Married'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Married
+                    </label>
+                    <label>
+                        <input type="radio" value="Single"
+                               checked={newUser.maritalStatus === 'Single'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Single
+                    </label>
+                    <label>
+                        <input type="radio" value="Widowed"
+                               checked={newUser.maritalStatus === 'Widowed'}
+                               onChange={(e) =>
+                                   setNewUser({...newUser, maritalStatus: e.target.value})} />
+                        Widowed
+                    </label>
                 </div>
                 <div>
                     <button type="submit" className="btn btn-primary mb-5">Save></button>
