@@ -33,7 +33,7 @@ const Profile = () => {
           <img className="w-100" src={profile.headerImage}/>
           <div className="bottom-0 left-0 position-absolute">
             <div className="position-relative">
-              <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-150px"
+              <img className="position-relative ttr-z-index-1 ttr-top-60px ttr-width-150px"
                    src={profile.profilePhoto}/>
             </div>
           </div>
