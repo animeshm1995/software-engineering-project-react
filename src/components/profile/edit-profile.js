@@ -3,6 +3,13 @@ import {useEffect, useState} from "react";
 import * as service from "../../services/profile-service";
 
 const EditProfile = () => {
+    const reloadCount = sessionStorage.getItem('reloadCount');
+    if(reloadCount < 2) {
+        sessionStorage.setItem('reloadCount', String(reloadCount + 1));
+        window.location.reload();
+    } else {
+        sessionStorage.removeItem('reloadCount');
+    }
     const [newUser,setNewUser] = useState({});
     const navigate = useNavigate();
     const handleFileUpload = async (e) => {
