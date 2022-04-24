@@ -11,7 +11,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({});
-  useFocusEffect(async () => {
+  useEffect(async () => {
     try {
       const user = await service.profile();
       console.log("shreya added-", user);
@@ -19,7 +19,7 @@ const Profile = () => {
     } catch (e) {
       navigate('/login');
     }
-  });
+  }, []);
   const logout = () => {
     service.logout()
         .then(() => navigate('/login'));
