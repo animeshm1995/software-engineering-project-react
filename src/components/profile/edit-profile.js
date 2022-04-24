@@ -41,8 +41,8 @@ const EditProfile = () => {
                     <img className="w-100" src="../../../public/images/nasa-profile-header.jpg"/>
                     <div className="bottom-0 left-0 position-absolute">
                         <div className="position-relative">
-                            <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-50px"
-                                 src={newUser.profilePhoto}/>
+                            <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-150px"
+                                 src={newUser.profilePhoto} height={10} width={10}/>
                         </div>
                     </div>
                 </div>
