@@ -19,7 +19,7 @@ const Profile = () => {
     } catch (e) {
       navigate('/login');
     }
-  }, []);
+  });
   const logout = () => {
     service.logout()
         .then(() => navigate('/login'));
