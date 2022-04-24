@@ -28,7 +28,7 @@ const Home = () => {
         <div className="d-flex">
           <div className="p-2">
             <img className="ttr-width-50px rounded-circle"
-                 src={tuit.postedBy.profilePhoto}/>
+                 src="../../../public/images/nasa-logo.jpg"/>
           </div>
           <div className="p-2 w-100">
             <textarea
