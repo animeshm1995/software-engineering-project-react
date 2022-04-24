@@ -5,6 +5,23 @@ import * as service from "../../services/profile-service";
 const EditProfile = () => {
     const [newUser,setNewUser] = useState({});
     const navigate = useNavigate();
+    const handleFileUpload = async (e) => {
+        const file = e.target.files[0];
+        const base64 = await convertToBase64(file);
+        setNewUser({ ...newUser, profilePhoto, myFile: base64 });
+    };
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
     const findMyProfile = () =>
         service.findUserById("my")
             .then(newUser => setNewUser(newUser));
@@ -84,7 +101,7 @@ const EditProfile = () => {
                     <input id="photo"
                            className="p-0 form-control border-0"
                            onChange={(e) =>
-                               setNewUser({...newUser, profilePhoto: e.target.value})}
+                               handleFileUpload(e)}
                            type="file"/>
                 </div>
                 //todo
