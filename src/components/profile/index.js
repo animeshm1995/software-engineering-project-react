@@ -7,8 +7,6 @@ import Media from "./media";
 import MyLikes from "./my-likes";
 import MyDislikes from "./my-dislikes";
 const Profile = () => {
-  console.log("shreya added reload");
-  window.location.reload();
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({});
