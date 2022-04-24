@@ -7,6 +7,13 @@ import Media from "./media";
 import MyLikes from "./my-likes";
 import MyDislikes from "./my-dislikes";
 const Profile = () => {
+  const reloadCount = sessionStorage.getItem('reloadCount');
+  if(reloadCount < 2) {
+    sessionStorage.setItem('reloadCount', String(reloadCount + 1));
+    window.location.reload();
+  } else {
+    sessionStorage.removeItem('reloadCount');
+  }
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({});
