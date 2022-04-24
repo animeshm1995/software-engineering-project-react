@@ -33,8 +33,9 @@ const EditProfile = () => {
     useEffect(findMyProfile, {});
     const editProfile = () =>
         service.updateUser("my",newUser)
-            .then((user) => navigate('/profile/mytuits'))
-            .catch(e => alert(e));
+    this.props.history.push('/profile/mytuits');
+          //  .then((user) => navigate('/profile/mytuits'))
+           // .catch(e => alert(e));
     return(
         <div className="ttr-edit-profile">
             <div className="border border-bottom-0">
