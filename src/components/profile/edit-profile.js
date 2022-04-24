@@ -10,6 +10,11 @@ const EditProfile = () => {
         const base64 = await convertToBase64(file);
         setNewUser({ ...newUser, profilePhoto: base64 });
     };
+    const handleFileUploadHeader = async (e) => {
+        const file = e.target.files[0];
+        const base64 = await convertToBase64(file);
+        setNewUser({ ...newUser, headerImage: base64 });
+    };
     const convertToBase64 = (file) => {
         return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
@@ -42,7 +47,7 @@ const EditProfile = () => {
                     <div className="bottom-0 left-0 position-absolute">
                         <div className="position-relative">
                             <img className="position-relative ttr-z-index-1 ttr-top-40px ttr-width-150px"
-                                 src={newUser.profilePhoto} height={10} width={10}/>
+                                 src={newUser.profilePhoto} height={40}/>
                         </div>
                     </div>
                 </div>
@@ -52,7 +57,7 @@ const EditProfile = () => {
                     <label htmlFor="username">Username</label>
                     <input id="username" title="Username" readOnly
                            className="p-0 form-control border-0"
-                           placeholder="alan" value="alan"/>
+                           placeholder="Username" value = {newUser.username}/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="first-name">First name</label>
@@ -108,7 +113,7 @@ const EditProfile = () => {
                     <input id="header"
                            className="p-0 form-control border-0"
                            onChange={(e) =>
-                               setNewUser({...newUser, headerImage: e.target.value})}
+                               handleFileUploadHeader(e)}
                            type="file"/>
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
