@@ -13,7 +13,7 @@ const Profile = () => {
   useEffect(async () => {
     try {
       const user = await service.profile();
-      setProfile(profile,user);
+      setProfile(user);
     } catch (e) {
       navigate('/login');
     }
