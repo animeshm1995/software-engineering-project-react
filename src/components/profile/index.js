@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import MyTuits from "./my-tuits";
+import { useFocusEffect } from '@react-navigation/native';
 import {HashRouter, Link, Route, Routes, useNavigate, useLocation} from "react-router-dom";
 import * as service from "../../services/security-service"
 import TuitsAndReplies from "./tuits-and-replies";
@@ -10,7 +11,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({});
-  useEffect(async () => {
+  useFocusEffect(async () => {
     try {
       const user = await service.profile();
       console.log("shreya added-", user);
