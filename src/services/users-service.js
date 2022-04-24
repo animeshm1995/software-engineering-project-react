@@ -5,25 +5,25 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USERS_API = `${BASE_URL}/api/users`;
 
 export const createUser = (user) =>
-    api.post(`${USERS_API}`, user)
+    axios.post(`${USERS_API}`, user)
     .then(response => response.data);
 
 export const findAllUsers = () =>
-    api.get(USERS_API)
+    axios.get(USERS_API)
         .then(response => response.data);
 
 export const findUserById = (uid) => {
     console.log("Animesh find user: ", uid);
-    api.get(`${USERS_API}/${uid}`)
+    axios.get(`${USERS_API}/${uid}`)
         .then(response => response.data);
 }
 
 export const deleteUser = (uid) =>
-  api.delete(`${USERS_API}/${uid}`)
+    axios.delete(`${USERS_API}/${uid}`)
     .then(response => response.data);
 
 export const deleteUsersByUsername = (username) =>
-  api.get(`${USERS_API}/username/${username}/delete`)
+    axios.get(`${USERS_API}/username/${username}/delete`)
     .then(response => response.data);
 
 
