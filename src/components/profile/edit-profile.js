@@ -84,14 +84,6 @@ const EditProfile = () => {
                                placeholder="biography" />
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="date-of-birth">Date of birth</label>
-                    <input id="date-of-birth"
-                           className="p-0 form-control border-0" value = {newUser.dateOfBirth}
-                           onChange={(e) =>
-                               setNewUser({...newUser, dateOfBirth: e.target.value})}
-                           placeholder="date-of-birth"/>
-                </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="email">Email</label>
                     <input id="email" value = {newUser.email}
                            className="p-0 form-control border-0"
