@@ -4,10 +4,6 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USERS_API = `${BASE_URL}/api/users`;
 
-const api = axios.create({
-                             withCredentials: true
-                         });
-
 export const createUser = (user) =>
     axios.post(`${USERS_API}`, user)
     .then(response => response.data);
