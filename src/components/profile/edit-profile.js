@@ -149,7 +149,7 @@ const EditProfile = () => {
                     </label>
                 </div>
                 <div>
-                    <button type="submit" className="btn btn-primary mb-5">Save></button>
+                    <button type="submit" className="btn btn-primary mb-5">Save</button>
                 </div>
             </form></div>
     );
